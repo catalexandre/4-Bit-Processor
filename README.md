@@ -2,7 +2,7 @@
 A 4-Bit Processor built in my system hardware university laboratory
 
 ## Index
-#### [Introduction](#introduction-1)
+#### [Introduction](#introduction-0)
 #### Integrated circuits components descriptions
 555
 74LS164

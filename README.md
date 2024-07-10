@@ -46,7 +46,8 @@ This section will introduce every integrated circuit used in this lab. Specific 
 
 NOTE: Please refer to any official documentation for the pin-out diagram of each component  
 
-Below is every component used and their use in the computer
+Below is every component in the computer and the integrated circuits they are composed of
+
 #### Timing signal generator (TSG)
 555 Timer - clock<br>
 74LS164 SIPO shift register - timing signal generator<br>
@@ -67,6 +68,8 @@ ATtiny2313A - read-only memory block<br>
 #### Control signal generator
 7408 AND gate<br>
 7432 OR gate
+
+### Integrated circuits
 
 In general, pins with label VCC should be connected to VCC, and GND linked to ground.
 In this lab, LEDs are used to see the outputs. To connect an LED, link the output on the side with words (anode), then on the blank side (cathode) link a grounded bussed resistor pack.

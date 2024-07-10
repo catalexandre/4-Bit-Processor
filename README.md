@@ -4,26 +4,26 @@ A 4-Bit Processor built in my system hardware university laboratory
 ## Index
 #### [Introduction](#introduction-1)
 #### [Integrated circuits components descriptions](#integrated-circuits-components-descriptions-1)
-[555](#555-timer)<br>
-[74LS164](#74ls164-sipo-shift-register)<br>
-[7420](#7420-nand-gate)<br>
-[74LS283](#74ls283-4-bit-adder)<br>
-[74LS173](#74ls173-4-bit-register)<br>
-[ATtiny2313A](#attiny2313a)<br>
-[7442](#7442-decoder)<br>
-[7404](#7404-not-----gate)<br>
-7408<br>
-7432<br>
+- [555](#555-timer)<br>
+- [74LS164](#74ls164-sipo-shift-register)<br>
+- [7420](#7420-nand-gate)<br>
+- [74LS283](#74ls283-4-bit-adder)<br>
+- [74LS173](#74ls173-4-bit-register)<br>
+- [ATtiny2313A](#attiny2313a)<br>
+- [7442](#7442-decoder)<br>
+- [7404](#7404-not-----gate)<br>
+- [7408](#7408-and----gate)<br>
+- [7432](#7432-or----gate)<br>
 #### Operation of the computer
 #### Computer specific workings and wiring
-Timing signal generator
-Data bus
-Program counter
-Arithmetic unit
-Mirror register
-Memory
-Data registers
-Control signal generator
+- Timing signal generator
+- Data bus
+- Program counter
+- Arithmetic unit
+- Mirror register
+- Memory
+- Data registers
+- Control signal generator
 
 ## Introduction
 This lab report describes the process of building a 4-bit computer using different integrated circuits such as registers, logic gates, a clock, and more. The different components that make up this computer include a timing signal generator (TSG), a program counter (PC), an arithmetic logic unit (“ALU”), a sum register, data registers, memory address register (MAR), program memory, a decoder, a control signal generator (CSG), and a bus. 

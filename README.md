@@ -5,15 +5,15 @@ A 4-Bit Processor built in my system hardware university laboratory
 #### [Introduction](#introduction-1)
 #### Integrated circuits components descriptions
 555 <br>
-74LS164
-7420
-74LS283
-74LS173
-ATtiny2313A
-7442
-7404
-7408
-7432
+74LS164<br>
+7420<br>
+74LS283<br>
+74LS173<br>
+ATtiny2313A<br>
+7442<br>
+7404<br>
+7408<br>
+7432<br>
 #### Operation of the computer
 #### Computer specific workings and wiring
 Timing signal generator

@@ -38,5 +38,5 @@ and are executed in the order saved in a preprogrammed ATtiny2313A microcontroll
 
 The following sections of the lab report cover everything there is to know about the construction and functioning of the computer in more detail, from schematics to timing diagrams.
 
-![](final_board.png)
+![](final_board.png) <br>
 Click here for a [video](https://youtube.com/shorts/8P3Bk8ZhHko?si=GYPgo7M3aASAGeQ_) of the functionning computer.

@@ -4,14 +4,14 @@ A 4-Bit Processor built in my system hardware university laboratory
 ## Index
 #### [Introduction](#introduction-1)
 #### [Integrated circuits components descriptions](#integrated-circuits-components-descriptions-1)
-555<br>
-74LS164<br>
-7420<br>
-74LS283<br>
-74LS173<br>
-ATtiny2313A<br>
-7442<br>
-7404<br>
+[555](#555-timer)<br>
+[74LS164](#74ls164-sipo-shift-register)<br>
+[7420](#7420-nand-gate)<br>
+[74LS283](#74ls283-4-bit-adder)<br>
+[74LS173](#74ls173-4-bit-register)<br>
+[ATtiny2313A](#attiny2313a)<br>
+[7442](#7442-decoder)<br>
+[7404](#7404-not-----gate)<br>
 7408<br>
 7432<br>
 #### Operation of the computer

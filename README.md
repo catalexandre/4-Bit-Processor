@@ -4,7 +4,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 ## Index
 #### [Introduction](#introduction-1)
 #### Integrated circuits components descriptions
-555 <br>
+555<br>
 74LS164<br>
 7420<br>
 74LS283<br>
@@ -37,3 +37,4 @@ No operation
 and are executed in the order saved in a preprogrammed ATtiny2313A microcontroller acting as the computer’s memory.
 
 The following sections of the lab report cover everything there is to know about the construction and functioning of the computer in more detail, from schematics to timing diagrams.
+

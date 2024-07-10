@@ -36,6 +36,7 @@ Move the contents of register B to register A
 No operation
 and are executed in the order saved in a preprogrammed ATtiny2313A microcontroller acting as the computer’s memory.
 
+## Integrated circuits components descriptions
 The following sections of the lab report cover everything there is to know about the construction and functioning of the computer in more detail, from schematics to timing diagrams.
 
 ![](final_board.png) <br>

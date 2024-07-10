@@ -2,8 +2,8 @@
 A 4-Bit Processor built in my system hardware university laboratory
 
 ## Index
-### [Introduction](#Introduction)
-### Integrated circuits components descriptions
+#### [Introduction](###Introduction)
+#### Integrated circuits components descriptions
 555
 74LS164
 7420
@@ -14,8 +14,8 @@ ATtiny2313A
 7404
 7408
 7432
-### Operation of the computer
-### Computer specific workings and wiring
+#### Operation of the computer
+#### Computer specific workings and wiring
 Timing signal generator
 Data bus
 Program counter

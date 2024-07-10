@@ -43,33 +43,33 @@ Click here for a [video](https://youtube.com/shorts/8P3Bk8ZhHko?si=GYPgo7M3aASAG
 
 ## Integrated circuits components descriptions
 This section will introduce every integrated circuit used in this lab. Specific wiring between ICs will be discussed in later sections, differences in wiring and functionality for the same IC will also be discussed in other sections, this is only an overview and an explanation for important pins.
+
 NOTE: Please refer to any official documentation for the pin-out diagram of each component  
 
 Below is every component used and their use in the computer
 #### Timing signal generator (TSG)
-555 Timer - clock
-74LS164 SIPO shift register - timing signal generator
+555 Timer - clock<br>
+74LS164 SIPO shift register - timing signal generator<br>
 7420 NAND gate - input for the timing signal generator
 #### Arithmetic unit (“ALU”) and program counter (PC)
-74LS283 4-bit adder - pseudo ALU (can only add)
-74LS173 4-bit register - program counter 
-74LS173 4-bit register - sum register
-74LS173 4-bit register - mirror register
+74LS283 4-bit adder - pseudo ALU (can only add)<br>
+74LS173 4-bit register - program counter<br>
+74LS173 4-bit register - sum register<br>
+74LS173 4-bit register - mirror register<br>
 7404 NOT gate - invert clock signals
 #### Data registers and memory address register (MAR)
-74LS173 4-bit register - data register A
-74LS173 4-bit register - data register B
+74LS173 4-bit register - data register A<br>
+74LS173 4-bit register - data register B<br>
 74LS173 4-bit register - memory address register
 #### Program memory (ROM)
-ATtiny2313A - read-only memory block
+ATtiny2313A - read-only memory block<br>
 7442 decoder
 #### Control signal generator
-7408 AND gate
+7408 AND gate<br>
 7432 OR gate
 
 In general, pins with label VCC should be connected to VCC, and GND linked to ground.
 In this lab, LEDs are used to see the outputs. To connect an LED, link the output on the side with words (anode), then on the blank side (cathode) link a grounded bussed resistor pack.
-
  
 #### 555 Timer
 This IC is used as the clock of the computer.

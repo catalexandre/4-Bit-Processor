@@ -69,7 +69,7 @@ ATtiny2313A - read-only memory block<br>
 7408 AND gate<br>
 7432 OR gate
 
-### Integrated circuits
+### ICs
 
 In general, pins with label VCC should be connected to VCC, and GND linked to ground.
 In this lab, LEDs are used to see the outputs. To connect an LED, link the output on the side with words (anode), then on the blank side (cathode) link a grounded bussed resistor pack.

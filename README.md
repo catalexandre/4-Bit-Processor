@@ -126,3 +126,4 @@ Contains 4 sets of AND logic gates, two inputs for one output
 #### 7432 OR ( || ) gate
 Contains 4 sets of OR logic gates, two inputs for one output
 
+![](board_components.jpg)

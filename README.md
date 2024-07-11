@@ -23,7 +23,6 @@ A 4-Bit Processor built in my system hardware university laboratory
 - Memory
 - Data registers
 - Control signal generator
-#### [Operation of the computer](#operation-of-the-computer-1)
 
 ## Introduction
 This lab report describes the process of building a 4-bit computer using different integrated circuits such as registers, logic gates, a clock, and more. The different components that make up this computer include a timing signal generator (TSG), a program counter (PC), an arithmetic logic unit (“ALU”), a sum register, data registers, memory address register (MAR), program memory, a decoder, a control signal generator (CSG), and a bus. 
@@ -132,28 +131,12 @@ Shown in the following figure is a picture showing what each integrated circuit 
 
 ## Computer Specific Workings and Wiring
 
-## Operation of The Computer
-This section is a step-by-step on how the computer runs and what each cycle does.
+This section is mostly about how each part of the computer works and communicates between each component, along with more wiring connections.
 
-The following figure is a diagram of every component in the computer which will help in understanding the processors operation:
+The following figure is a diagram of every component in the computer which will help in understanding the processors functionning:
 ![](computer_diagram.png)
 
-Starting with the components that are always active, the 555 clock generates a signal that the shift register uses along with the 7420 NAND gate to create a feedback loop, creating 8 signals from T0 to T7 signals that make up the timing signal generator. The timing signal generator then dictates when which register takes inputs or outputs data onto the bus, avoiding bus conflict. 
+Timing Signal Generator
+The timing signal generator is the first important component of the computer which dictates when every piece of hardware can communicate with each other, making the computer's components work in perfect synchronization. It uses a 555 timing circuit to generate a pulsating clock with a frequency of around 3.25Hz, meaning that it completes a cycle of going from a logical zero, or low voltage, to a high voltage logical one and back to low voltage 3.25 times per second. Moreover, the ratio representing the amount of time for which the logical 1 is held - compared to the logical zero during a clock cycle - is known as the duty cycle.
 
-For the next one on the line, a component that is running every cycle is the program counter(PC). This register saves a number that indicates the address of the current instruction. There are two other components using its information: 
-- The memory address register (MAR) sends the address to access the instruction at the specified memory location
-- The mirror register is used to display the address of the instruction is being accessed and ran by the computer by outputting it to an LED pack
-
-Next, the components that do not have a clock are the arithmetic unit, the memory block and the decoder decoding the instructions from the memory. 
-- The arithmetic unit serves to increment the PC as well as data registers A and B, depending on the command. In order to avoid bus conflict, the “ALU” has its own register, the sum register, to output the sum back onto the bus once the component initially outputting its data stops outputting onto the bus.
-- The memory block contains all the instructions to be executed by the computer. It obtains its inputs from the MAR (who gets its inputs while the PC outputs). The MAR is wired to constantly output its data making it that the memory and the decoder are both constantly giving out their outputs (I0 to I3 and Y0 to Y4). Therefore variations in instructions depend on the specific outputs of I0 to I3 AND the timing being generated.
-- The decoder decodes the instructions from memory into binary. It was linked to an LED pack to display which instruction was ongoing
-
-Moving on to the conditionally triggered components, there are the two data registers. The behaviour of those two are regulated by AND and OR logic gates, which in turn takes inputs from memory and TSG. The list of instructions being executed are:
-- INC A – increment data register A
-- INC B – increment data register B
-- MOV AB – move the content of register A to register B
-- MOV BA – move the content of register B to register A
-- NOP – no operation
-
-There is also a NOT gate inverting the clock input to make it positive-edge triggered for the registers since the computer is negative-edge triggered
+The 555 clock is wired with 22kΩ (R1) and 56kΩ (R2) resistors, as well as 3.3nF (C2) and 10nF (C1) capacitors, allowing the frequency and duty cycle to be calculated using the below formulas.

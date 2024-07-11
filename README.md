@@ -16,7 +16,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [7432](#7432-or----gate)<br>
 #### Computer specific workings and wiring
 - [Timing signal generator](#Timing-Signal-Generator)
-- Data bus
+- [Data bus](#Data-Bus)
 - Program counter
 - Arithmetic unit
 - Mirror register
@@ -163,3 +163,5 @@ The schematic found in figure 1 shows the necessary connections to construct the
 
 The following figure shows the wiring of the Timing Signal Generator:
 ![](TSG_wiring.png)
+
+#### Data Bus

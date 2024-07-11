@@ -21,7 +21,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [Arithmetic unit](#Arithmetic-Unit)
 - [Mirror register](#Mirror-Register)
 - [Memory](#Memory)
-- [Data registers]
+- [Data registers](#Data-Registers)
 - [Control signal generator]
 
 ## Introduction
@@ -210,3 +210,5 @@ The possible processor operations and their opcode in binary and decimal values 
 
 The program executed by the computer is shown below:
 ![](program.png)
+
+## Data Registers

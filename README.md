@@ -152,3 +152,14 @@ The following table shows the inputs and outputs of the timing signal generator:
 ![](TSG_table.png)
 
 ![](TSG_timing_diagram.png)
+
+The outputs of the 74LS164’s QA to QH pins will be named signals T0 to T7, with: 
+- T0 being known as signal PC_OUT
+- T1 as SUM_IN
+- T2 as SUM_OUT
+- T3 as PC_IN
+referring to their use in controlling the computer’s different components, which will be explored in greater detail in further sections of this lab report.
+The schematic found in figure 1 shows the necessary connections to construct the TSG and completes this component’s section.
+
+The following figure shows the wiring of the Timing Signal Generator:
+![](TSG_wiring.png)

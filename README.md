@@ -150,3 +150,5 @@ This clock cycle is then fed into pin 8 of a 74LS164 shift register, as seen in 
 
 The following table shows the inputs and outputs of the timing signal generator:
 ![](TSG_table.png)
+
+![](TSG_timing_diagram.png)

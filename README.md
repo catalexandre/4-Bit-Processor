@@ -204,3 +204,9 @@ This now leads to the question of how many different instructions can be outputt
 
 In the following figure, the wiring for the 7442 and 2313 integrated circuits is shown:
 ![](2313_7442_wiring.png)
+
+The possible processor operations and their opcode in binary and decimal values is in the table below:
+![](operations.png)
+
+The program executed by the computer is shown below:
+![](program.png)

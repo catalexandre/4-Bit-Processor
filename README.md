@@ -203,7 +203,7 @@ Instructions addresses are first fetched from the memory address register (MAR),
 This now leads to the question of how many different instructions can be outputted by the 4-bit computer. In theory, since there are 4 bits of input fed from the tiny, the 7442 should be able to get 16 different instructions; however, since the 7442 only has 10 pins for outputs, it can only return 10 instructions. There are actually only 5 different preprogrammed instructions though, so linking the first 5 pins (Y0 to Y4) of the 7442 to output into some LEDs were enough to show all 5 instructions (the extra 1s from the 5 other pins won't make any difference).
 
 In the following figure, the wiring for the 7442 and 2313 integrated circuits is shown:
-![](2313_7442_wiring.png)
+![](2313_7442_schematic.png)
 
 The possible processor operations and their opcode in binary and decimal values is in the table below:
 ![](operations.png)

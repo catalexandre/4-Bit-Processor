@@ -180,3 +180,10 @@ The arithmetic unit is a component that has many uses in a computer as it can pe
 This 4-bit adder has its carry in constantly set to one, as was previously mentioned, meaning that any value X currently on the bus will always be output as X+1 by the adder. The unit is combined with a register called the sum register, which when enabled by a clock, will take in the value output by the arithmetic unit as its input pins are connected directly to the adder's outputs, as can be seen in figure 3. The way the combination of 4-bit adder and sum register work in incrementing PC value is that the arithmetic unit does not need to be enabled by any sort of clock, meaning that when the current value of the program counter is sent on the bus on the PC_OUT signal, the SUM_IN signal will enable the sum register to get the 4-bit adder result as its input.
 
 A similar process will be used to perform the IncA and IncB operations which will later need to be implemented, except that the clock pin of the sum register will no longer be connected solely to the SUM_IN timing signal, as a different timing signal called the control signal will need to be implemented to properly increment other values sent on the bus. However, these modifications will be explained in further detail in the part of the lab report where the control signal generator is discussed.
+
+The timing diagram for timing signals T0 to T3 can be seen in the following figure:
+![](To_to_t3.png)
+
+Lastly, the signals that are used by the program counter and sum register can be seen in figure 2, where the signal T1 and T3 are reversed as the computer is negative edge to be triggered, hence why timing signals are sent through NOT gates before being connected to their clock pins labeled Cp, as seen in figure 3.
+
+![](PC_ALU_wiring.png)

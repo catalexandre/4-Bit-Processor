@@ -222,7 +222,6 @@ The steps taken by instruction increment A look something like this:
 3. Sum register outputs its value onto the bus
 4. Register A stores the value from the bus
 
-
 ## Data Registers
 The data registers A and B are both the 74LS173 IC. Their purpose is to save the data inputted from the bus and modify it depending on the instruction provided. Their input and output pins are both wired to the bus so that they can send out the data for processing and receive the data afterwards. 
 

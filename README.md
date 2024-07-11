@@ -18,11 +18,11 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [Timing signal generator](#Timing-Signal-Generator)
 - [Data bus](#Data-Bus)
 - [Program counter](#Program-Counter)
-- Arithmetic unit
-- Mirror register
-- Memory
-- Data registers
-- Control signal generator
+- [Arithmetic unit](#Arithmetic-Unit)
+- [Mirror register]
+- [Memory]
+- [Data registers]
+- [Control signal generator]
 
 ## Introduction
 This lab report describes the process of building a 4-bit computer using different integrated circuits such as registers, logic gates, a clock, and more. The different components that make up this computer include a timing signal generator (TSG), a program counter (PC), an arithmetic logic unit (“ALU”), a sum register, data registers, memory address register (MAR), program memory, a decoder, a control signal generator (CSG), and a bus. 
@@ -170,3 +170,13 @@ The data bus is the connection of every component to every other component that 
 The advantage of using a bus is that it eliminates the need to connect every component to every other component it may need to send data to, as doing so would result in a great mess of wires. However, in this configuration, it is of course very important to make sure that no two components send their information on the bus at the same time, as that would create a bus conflict because of the possible short-circuiting of integrated circuits via the chaos in the voltages representing the bus’ data. In the case of this four bit computer, when the output of an integrated circuit is being controlled by the timing signal generator to stop the sending of data onto the bus, the buffer connecting the circuit to the bus is in the high-impedance state, meaning that it is impossible for electricity to flow in either direction through the device. Otherwise, the states of the devices are known as high output state and low output state, referring to logic zeros and logic ones. This allows the different components that will later need to be connected to the bus to take turns communicating on the bus without interference from other devices in the high-impedance state. 
 
 ### Program Counter
+The program counter is the next necessary part in the construction of the four bit computer as it keeps count of which instruction is to be executed. It consists of a 74LS173 register with timing signal T3, or PC_IN, as its clock and T0 or PC_out connected to the tri state buffer. It must be noted that the 74LS173 register requires a negated clock signal, so the T3 signal is passed through a NOT gate, and the same applies for all other 74LS173s that will be used in the making of this computer. The input and output pins of the program counter register will all be connected to the tri state bus as the timing signal clock will allow it to get data from the bus as well as output onto it whenever it needs, and the tri-state buffer disconnects it’s output when it is not necessary for it to have it’s output enabled. Pins 9 and 10 of the program counter register can then be connected to ground as their signal is inverted and the register should always be enabled considering the TSG clock is already controlling the register, and the same will hold true for every 74LS173 register that will be used in this computer.
+
+The program counter by itself serves little purpose as it needs to be combined with an arithmetic unit in order to be incremented and function as a counter would, because as was mentioned before, the program counter keeps count of which instruction is to be executed. This means that the value held in the program counter will always increment by one, reaching fifteen, before going back to zero in order to restart the count. The value of fifteen is not an arbitrary number, but is because the computer has four bits, and 24 is 16, meaning that starting at 0 going to 15 gives 16 possible values.
+
+### Arithmetic Unit
+The arithmetic unit is a component that has many uses in a computer as it can perform arithmetic operations on values fed to it. In this computer's case, the values on which the unit performs operations are given to it via the input pins connected to the bus. Additionally, its carry-in pin C0 is wired directly to VCC, giving it a constant logical one as its sole purpose is to increment values that can either be the PC value or values held in the data registers A and B, which will be touched on later. 
+
+This 4-bit adder has its carry in constantly set to one, as was previously mentioned, meaning that any value X currently on the bus will always be output as X+1 by the adder. The unit is combined with a register called the sum register, which when enabled by a clock, will take in the value output by the arithmetic unit as its input pins are connected directly to the adder's outputs, as can be seen in figure 3. The way the combination of 4-bit adder and sum register work in incrementing PC value is that the arithmetic unit does not need to be enabled by any sort of clock, meaning that when the current value of the program counter is sent on the bus on the PC_OUT signal, the SUM_IN signal will enable the sum register to get the 4-bit adder result as its input.
+
+A similar process will be used to perform the IncA and IncB operations which will later need to be implemented, except that the clock pin of the sum register will no longer be connected solely to the SUM_IN timing signal, as a different timing signal called the control signal will need to be implemented to properly increment other values sent on the bus. However, these modifications will be explained in further detail in the part of the lab report where the control signal generator is discussed.

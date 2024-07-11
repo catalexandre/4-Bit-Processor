@@ -248,6 +248,32 @@ NOP means no operation:
 
 ![](NOOP_diagram.png)
 
+Knowing that the first four timing signals, T0 to T3, are used for incrementing the program counter, it is established that the first timing signal used in the execution of program instructions is T4. Now, since register A must output it’s value onto the bus as the first execution step when the current instruction is instruction with opcode 0 and Instruction with opcode 2, the combinational logic for the signal that allows register A to output onto the bus would be constructed as:
+
+OEA = (T4 ⋅ Isig0) + (T4 ⋅ Isig2)
+
+This describes that register A’s output enable must be enabled when the computer is at the first execution step and the instruction opcode is 2 or when the computer is at the first execution step and the opcode is 0. Compared to the necessary behavior taken from the written steps, it is clear that feeding such a signal to the output enable of register A would produce the right outputs when necessary.
+
+Now, the combinational logic for the control signal may be right, but constructing the circuit in such a way would not yield the correct activation of the output since as was previously mentioned, the computer is negative edge triggered. This means that the whole equation must be NOTed, which is why the sum register previously had its clock signal fed through a NOT gate, which it still will as the SUM_IN timing signal will simply be replaced by the new SUM register control signal. Doing so yields the new combinational logic equation by deMorgan’s rule:
+
+OEA = (T4 + Isig0) ⋅ (T4 + Isig2)
+
+Following the same steps as before and establishing when a register must take data from and output to the bus to construct the boolean logic equations for control signals CLKA, OEB, CLKB, OESUM, and CLKSUM, one may obtain:
+
+CLKA = (T7 + Isig0) ⋅ (T5 + Isig3)
+
+Now for data register B:
+OEB = (T4 + Isig1) ⋅ (T4 + Isig3)
+CLKB = (T7 + Isig1) ⋅ (T5 + Isig2)
+
+Lastly, for the sum register:
+OESUM = (T6 + Isig0) ⋅ (T6 + Isig1) ⋅ T2
+CLKSUM = (T5 + Isig0) ⋅ (T5 + Isig1) ⋅ T1
+
+Now, connecting these control signals to their respective register will complete this four bit computer project and allow the proper functioning of all components, given that everything else is properly constructed.
+
+Lastly, the control signal generator can be seen in figure 5 and is easy to recognize as it is the big group of AND and OR gates with the timing and instruction signals as inputs, coming from the 164 shift register and 7442 decoder respectively.
+
 ## Data Registers
 The data registers A and B are both the 74LS173 IC. Their purpose is to save the data inputted from the bus and modify it depending on the instruction provided. Their input and output pins are both wired to the bus so that they can send out the data for processing and receive the data afterwards. 
 
@@ -265,3 +291,6 @@ Clock = (T7 + I1)・(T5 + I2)
 Explanation, output enable needs to be 0 for the register to leave the high impedance state. Output-enable at pin 9 and 10 are notted, so the actual input is ANDing T4 with (I0 + I2) for register A && T4 with (I1 + I3) for register B, the decoder inputs can control whether register A (I0 & I2 gives logic 1) can’t output or register B (I1 & I3 gives logic 1) can’t output depending on the inputs from the memory.
 
 Clock is triggered on the negative edge (falling to 0 negated becomes positive edge), thus the goal is to obtain a 0 from a 1. Also, note that the data registers are not connected to any output since the values they hold is not shown on any LEDs.
+
+The finished processor should look something like this:
+![](computer_schematic.png)

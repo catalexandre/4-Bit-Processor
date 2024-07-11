@@ -15,7 +15,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [7408](#7408-and----gate)<br>
 - [7432](#7432-or----gate)<br>
 #### Computer specific workings and wiring
-- [Timing signal generator](#Timing-Signal-Generator-1)
+- [Timing signal generator](#Timing-Signal-Generator)
 - Data bus
 - Program counter
 - Arithmetic unit

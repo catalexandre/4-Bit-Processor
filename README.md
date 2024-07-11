@@ -212,6 +212,15 @@ The program executed by the computer is shown below:
 ![](program.png)
 
 ## Control Signal Generator
+The control signal generator is constructed with a combination of OR and AND gates that creates control signals to be used as clock inputs to the data registers and sum register, making them enabled when they must take an input from and output to the bus in order for them to function properly in executing the different computer instructions.
+
+Now, listing the steps that all instructions must execute in order to accomplish their functionality is necessary to determine the combinational logic that must be constructed so that registers properly output and take inputs in their respective times. Times start at T4 & ends at T7.
+
+The steps taken by instruction increment A look something like this:
+1. Register A outputs its value to the bus
+2. Sum register takes the incremented value from the bus
+3. Sum register outputs its value onto the bus
+4. Register A stores the value from the bus
 
 
 ## Data Registers

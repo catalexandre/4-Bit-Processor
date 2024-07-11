@@ -38,7 +38,7 @@ and are executed in the order saved in a preprogrammed ATtiny2313A microcontroll
 
 The following sections of the lab report cover everything there is to know about the construction and functioning of the computer in more detail, from schematics to timing diagrams.
 
-Shown in the following figure is a picture of the finished computer
+Shown in the following figure is a picture of the finished computer:
 ![](final_board.png) <br>
 Click here for a [video](https://youtube.com/shorts/8P3Bk8ZhHko?si=GYPgo7M3aASAGeQ_) of the functionning computer.
 
@@ -127,7 +127,16 @@ Contains 4 sets of AND logic gates, two inputs for one output
 #### 7432 OR ( || ) gate
 Contains 4 sets of OR logic gates, two inputs for one output
 
-Shown in the following figure is a picture showing what each integrated circuit is in the computer
+Shown in the following figure is a picture showing what each integrated circuit is in the computer:
 ![](board_components.jpg)
 
 ## Operation of The Computer
+This section is a step-by-step on how the computer runs and what each cycle does.
+
+The following figure is a diagram of every component in the computer which will help in understanding the processors operation:
+![](computer_diagram.png)
+
+Starting with the components that are always active, the 555 clock generates a signal that the shift register uses along with the 7420 NAND gate to create a feedback loop, creating 8 signals from T0 to T7 signals that make up the timing signal generator. The timing signal generator then dictates when which register takes inputs or outputs data onto the bus, avoiding bus conflict. 
+
+For the next one on the line, a component that is running every cycle is the program counter(PC). This register saves a number that indicates the address of the current instruction. There are two other components using its information: 
+- The memory address register (MAR) sends the address to access the instruction at the specified memory location

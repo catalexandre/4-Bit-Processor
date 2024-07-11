@@ -21,8 +21,8 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [Arithmetic unit](#Arithmetic-Unit)
 - [Mirror register](#Mirror-Register)
 - [Memory](#Memory)
+- [Control signal generator](#Control-Signal-Generator)
 - [Data registers](#Data-Registers)
-- [Control signal generator]
 
 ## Introduction
 This lab report describes the process of building a 4-bit computer using different integrated circuits such as registers, logic gates, a clock, and more. The different components that make up this computer include a timing signal generator (TSG), a program counter (PC), an arithmetic logic unit (“ALU”), a sum register, data registers, memory address register (MAR), program memory, a decoder, a control signal generator (CSG), and a bus. 
@@ -211,6 +211,9 @@ The possible processor operations and their opcode in binary and decimal values 
 The program executed by the computer is shown below:
 ![](program.png)
 
+## Control Signal Generator
+
+
 ## Data Registers
 The data registers A and B are both the 74LS173 IC. Their purpose is to save the data inputted from the bus and modify it depending on the instruction provided. Their input and output pins are both wired to the bus so that they can send out the data for processing and receive the data afterwards. 
 
@@ -227,4 +230,4 @@ Clock = (T7 + I1)・(T5 + I2)
 
 Explanation, output enable needs to be 0 for the register to leave the high impedance state. Output-enable at pin 9 and 10 are notted, so the actual input is ANDing T4 with (I0 + I2) for register A && T4 with (I1 + I3) for register B, the decoder inputs can control whether register A (I0 & I2 gives logic 1) can’t output or register B (I1 & I3 gives logic 1) can’t output depending on the inputs from the memory.
 
-Clock is triggered on the negative edge (falling to 0 negated becomes positive edge), thus the goal is to obtain a 0 from a 1. How the instructions are outputted by the tiny weren’t recorded, therefore there is currently no verification for which I signals are triggered for which opcode.
+Clock is triggered on the negative edge (falling to 0 negated becomes positive edge), thus the goal is to obtain a 0 from a 1. Also, note that the data registers are not connected to any output since the values they hold is not shown on any LEDs.

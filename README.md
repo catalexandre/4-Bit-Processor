@@ -14,7 +14,6 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [7404](#7404-not-----gate)<br>
 - [7408](#7408-and----gate)<br>
 - [7432](#7432-or----gate)<br>
-#### [Operation of the computer](#operation-of-the-computer-1)
 #### Computer specific workings and wiring
 - Timing signal generator
 - Data bus
@@ -24,6 +23,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 - Memory
 - Data registers
 - Control signal generator
+#### [Operation of the computer](#operation-of-the-computer-1)
 
 ## Introduction
 This lab report describes the process of building a 4-bit computer using different integrated circuits such as registers, logic gates, a clock, and more. The different components that make up this computer include a timing signal generator (TSG), a program counter (PC), an arithmetic logic unit (“ALU”), a sum register, data registers, memory address register (MAR), program memory, a decoder, a control signal generator (CSG), and a bus. 
@@ -129,6 +129,8 @@ Contains 4 sets of OR logic gates, two inputs for one output
 
 Shown in the following figure is a picture showing what each integrated circuit is in the computer:
 ![](board_components.jpg)
+
+## Computer Specific Workings and Wiring
 
 ## Operation of The Computer
 This section is a step-by-step on how the computer runs and what each cycle does.

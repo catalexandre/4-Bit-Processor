@@ -201,3 +201,6 @@ The memory component of the 4 bit computer is being filled by the ATtiny2313A (w
 Instructions addresses are first fetched from the memory address register (MAR), from pin 3 to pin 6. This general purpose microcontroller then outputs, with the use of the 7442 IC, a specific cycle of instruction depending on which memory location was called by the program counter data on the MAR. A 7442 chip is then linked to decode what instruction gets outputted by the tiny: the 7442 decoder gets 4 inputs (I0 to I3) binary number from the tiny and converts it into a decimal output number (Y0 to Y9), with each instruction given in active low form (unique 0 in a sea of 1). 
 
 This now leads to the question of how many different instructions can be outputted by the 4-bit computer. In theory, since there are 4 bits of input fed from the tiny, the 7442 should be able to get 16 different instructions; however, since the 7442 only has 10 pins for outputs, it can only return 10 instructions. There are actually only 5 different preprogrammed instructions though, so linking the first 5 pins (Y0 to Y4) of the 7442 to output into some LEDs were enough to show all 5 instructions (the extra 1s from the 5 other pins won't make any difference).
+
+In the following figure, the wiring for the 7442 and 2313 integrated circuits is shown:
+![](2313_7442_wiring.png)

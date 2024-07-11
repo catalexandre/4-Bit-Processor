@@ -159,9 +159,8 @@ The outputs of the 74LS164’s QA to QH pins will be named signals T0 to T7, wit
 - T2 as SUM_OUT
 - T3 as PC_IN
 referring to their use in controlling the computer’s different components, which will be explored in greater detail in further sections of this lab report.
-The schematic found in figure 1 shows the necessary connections to construct the TSG and completes this component’s section.
+The schematic found in the following figure shows the necessary connections to construct the TSG and completes this component’s section.
 
-The following figure shows the wiring of the Timing Signal Generator:
 ![](TSG_wiring.png)
 
 ### Data Bus
@@ -184,7 +183,7 @@ A similar process will be used to perform the IncA and IncB operations which wil
 The timing diagram for timing signals T0 to T3 can be seen in the following figure:
 ![](T0_to_T3.png)
 
-Lastly, the signals that are used by the program counter and sum register can be seen in figure 2, where the signal T1 and T3 are reversed as the computer is negative edge to be triggered, hence why timing signals are sent through NOT gates before being connected to their clock pins labeled Cp, as seen in figure 3.
+Lastly, the signals that are used by the program counter and sum register can be seen in the figure above, where the signal T1 and T3 are reversed as the computer is negative edge to be triggered, hence why timing signals are sent through NOT gates before being connected to their clock pins labeled Cp, as seen in the below figure.
 
 ![](PC_ALU_wiring.png)
 
@@ -193,12 +192,12 @@ One may notice that there is an extra register on the above schematic in figure 
 
 In this case, the mirror register has its clock connected to timing signal SUM_IN, and its output enable pin linked to GND so that it can constantly output the values it holds to the LED pack to which its output pins are connected for debugging purposes. This allows the current program counter value to be displayed since SUM_IN allows the mirror register to retrieve the data on the bus, which will always be the data output by the program counter as it is, then in the cycle that the program counter outputs it’s value to be incremented by the arithmetic unit, and to then be held into the sum register.
 
-The mirror register is indeed the 74LS173 integrated circuit that can be seen as connected to the LED pack in the schematic from figure 3.
+The mirror register is indeed the 74LS173 integrated circuit that can be seen as connected to the LED pack in the schematic from the figure above.
 
 ### Memory
 The memory component of the 4 bit computer is being filled by the ATtiny2313A (will be referred to as “tiny”) chip. The tiny MCU cannot be reprogrammed with the currently available materials, so the existing instructions were used, and its memory unit is nonvolatile, so it served as a ROM (read-only memory) for obtaining instructions.
 
-Instructions addresses are first fetched from the memory address register (MAR), from pin 3 to pin 6. This general purpose microcontroller then outputs, with the use of the 7442 IC, a specific cycle of instruction depending on which memory location was called by the program counter data on the MAR. A 7442 chip is then linked to decode what instruction gets outputted by the tiny: the 7442 decoder gets 4 inputs (I0 to I3) binary number from the tiny and converts it into a decimal output number (Y0 to Y9), with each instruction given in active low form (unique 0 in a sea of 1). 
+Instructions addresses are first fetched from the memory address register (MAR), from pin 3 to pin 6. This general purpose microcontroller then outputs a specific cycle of instruction depending on which memory location was called by the program counter data on the MAR. A 7442 chip is then linked to decode what instruction gets outputted by the tiny: the 7442 decoder gets 4 inputs (I0 to I3) binary number from the tiny and converts it into a decimal output number (Y0 to Y9), with each instruction given in active low form (unique 0 in a sea of 1). 
 
 This now leads to the question of how many different instructions can be outputted by the 4-bit computer. In theory, since there are 4 bits of input fed from the tiny, the 7442 should be able to get 16 different instructions; however, since the 7442 only has 10 pins for outputs, it can only return 10 instructions. There are actually only 5 different preprogrammed instructions though, so linking the first 5 pins (Y0 to Y4) of the 7442 to output into some LEDs were enough to show all 5 instructions (the extra 1s from the 5 other pins won't make any difference).
 

@@ -21,7 +21,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [Arithmetic unit](#Arithmetic-Unit)
 - [Mirror register](#Mirror-Register)
 - [Memory](#Memory)
-- [Control signal generator](#Control-Signal-Generator)
+- [Control signal generator](#Control-Signal-Generator-1)
 - [Data registers](#Data-Registers)
 
 ## Introduction

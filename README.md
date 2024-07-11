@@ -140,3 +140,18 @@ Starting with the components that are always active, the 555 clock generates a s
 
 For the next one on the line, a component that is running every cycle is the program counter(PC). This register saves a number that indicates the address of the current instruction. There are two other components using its information: 
 - The memory address register (MAR) sends the address to access the instruction at the specified memory location
+- The mirror register is used to display the address of the instruction is being accessed and ran by the computer by outputting it to an LED pack
+
+Next, the components that do not have a clock are the arithmetic unit, the memory block and the decoder decoding the instructions from the memory. 
+- The arithmetic unit serves to increment the PC as well as data registers A and B, depending on the command. In order to avoid bus conflict, the “ALU” has its own register, the sum register, to output the sum back onto the bus once the component initially outputting its data stops outputting onto the bus.
+- The memory block contains all the instructions to be executed by the computer. It obtains its inputs from the MAR (who gets its inputs while the PC outputs). The MAR is wired to constantly output its data making it that the memory and the decoder are both constantly giving out their outputs (I0 to I3 and Y0 to Y4). Therefore variations in instructions depend on the specific outputs of I0 to I3 AND the timing being generated.
+- The decoder decodes the instructions from memory into binary. It was linked to an LED pack to display which instruction was ongoing
+
+Moving on to the conditionally triggered components, there are the two data registers. The behaviour of those two are regulated by AND and OR logic gates, which in turn takes inputs from memory and TSG. The list of instructions being executed are:
+- INC A – increment data register A
+- INC B – increment data register B
+- MOV AB – move the content of register A to register B
+- MOV BA – move the content of register B to register A
+- NOP – no operation
+
+There is also a NOT gate inverting the clock input to make it positive-edge triggered for the registers since the computer is negative-edge triggered

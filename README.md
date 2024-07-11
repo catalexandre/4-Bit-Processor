@@ -38,8 +38,7 @@ and are executed in the order saved in a preprogrammed ATtiny2313A microcontroll
 
 The following sections of the lab report cover everything there is to know about the construction and functioning of the computer in more detail, from schematics to timing diagrams.
 
-Shown in this figure is a picture of the finished computer
-
+Shown in the following figure is a picture of the finished computer
 ![](final_board.png) <br>
 Click here for a [video](https://youtube.com/shorts/8P3Bk8ZhHko?si=GYPgo7M3aASAGeQ_) of the functionning computer.
 
@@ -128,5 +127,5 @@ Contains 4 sets of AND logic gates, two inputs for one output
 #### 7432 OR ( || ) gate
 Contains 4 sets of OR logic gates, two inputs for one output
 
-Shown in this figure is a picture showing what each integrated circuit is in the computer
+Shown in the following figure is a picture showing what each integrated circuit is in the computer
 ![](board_components.jpg)

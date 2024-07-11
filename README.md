@@ -222,6 +222,32 @@ The steps taken by instruction increment A look something like this:
 3. Sum register outputs its value onto the bus
 4. Register A stores the value from the bus
 
+![](INCA_diagram.png)
+
+Increment B’s steps would be the following: 
+1. Register B outputs its value to the bus
+2. Sum register takes the incremented value from the bus
+3. Sum register outputs its value onto the bus
+4. Register B stores the value from the bus
+
+![](INCB_diagram.png)
+
+Move A to B performs the following steps:
+1. Register A outputs its value to the bus
+2. Register B stores the value on the bus
+
+![](MOVAB_diagram.png)
+
+Move B to A perform these steps:
+1. Register B outputs its value to the bus
+2. Register A stores the value taken from the bus
+
+![](MOVBA_diagram.png)
+
+NOP means no operation:
+
+![](NOOP_diagram.png)
+
 ## Data Registers
 The data registers A and B are both the 74LS173 IC. Their purpose is to save the data inputted from the bus and modify it depending on the instruction provided. Their input and output pins are both wired to the bus so that they can send out the data for processing and receive the data afterwards. 
 

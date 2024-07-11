@@ -129,3 +129,5 @@ Contains 4 sets of OR logic gates, two inputs for one output
 
 Shown in the following figure is a picture showing what each integrated circuit is in the computer
 ![](board_components.jpg)
+
+## Operation of The Computer

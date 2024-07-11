@@ -182,7 +182,7 @@ This 4-bit adder has its carry in constantly set to one, as was previously menti
 A similar process will be used to perform the IncA and IncB operations which will later need to be implemented, except that the clock pin of the sum register will no longer be connected solely to the SUM_IN timing signal, as a different timing signal called the control signal will need to be implemented to properly increment other values sent on the bus. However, these modifications will be explained in further detail in the part of the lab report where the control signal generator is discussed.
 
 The timing diagram for timing signals T0 to T3 can be seen in the following figure:
-![](T0_to_t3.png)
+![](T0_to_T3.png)
 
 Lastly, the signals that are used by the program counter and sum register can be seen in figure 2, where the signal T1 and T3 are reversed as the computer is negative edge to be triggered, hence why timing signals are sent through NOT gates before being connected to their clock pins labeled Cp, as seen in figure 3.
 

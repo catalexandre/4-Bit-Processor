@@ -17,7 +17,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 #### Computer specific workings and wiring
 - [Timing signal generator](#Timing-Signal-Generator)
 - [Data bus](#Data-Bus)
-- Program counter
+- [Program counter](#Program-Counter)
 - Arithmetic unit
 - Mirror register
 - Memory
@@ -165,3 +165,8 @@ The following figure shows the wiring of the Timing Signal Generator:
 ![](TSG_wiring.png)
 
 ### Data Bus
+The data bus is the connection of every component to every other component that needs to communicate to each other. It can be seen as a highway of information between components, where each component will send its data accordingly and others receive it with the help of timing signals given by the TSG. The bus used in this computer is known as a four bit bus because it is composed of four wires, each contributing to transporting one bit of information. 
+
+The advantage of using a bus is that it eliminates the need to connect every component to every other component it may need to send data to, as doing so would result in a great mess of wires. However, in this configuration, it is of course very important to make sure that no two components send their information on the bus at the same time, as that would create a bus conflict because of the possible short-circuiting of integrated circuits via the chaos in the voltages representing the bus’ data. In the case of this four bit computer, when the output of an integrated circuit is being controlled by the timing signal generator to stop the sending of data onto the bus, the buffer connecting the circuit to the bus is in the high-impedance state, meaning that it is impossible for electricity to flow in either direction through the device. Otherwise, the states of the devices are known as high output state and low output state, referring to logic zeros and logic ones. This allows the different components that will later need to be connected to the bus to take turns communicating on the bus without interference from other devices in the high-impedance state. 
+
+### Program Counter

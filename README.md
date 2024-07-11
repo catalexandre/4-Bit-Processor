@@ -212,3 +212,19 @@ The program executed by the computer is shown below:
 ![](program.png)
 
 ## Data Registers
+The data registers A and B are both the 74LS173 IC. Their purpose is to save the data inputted from the bus and modify it depending on the instruction provided. Their input and output pins are both wired to the bus so that they can send out the data for processing and receive the data afterwards. 
+
+The output enable pins and clock pins of the registers wired to a combination of logic gates for the following signals:
+(T inputs comes from TSG, I inputs originate from the decoder)
+
+### Data register A
+Output-enable = (T4 + I0)・(T4 + I2) — NOT version is T4・(I0 + I2)
+Clock = (T7 + I0)・(T5 + I3)
+
+### Data register B
+Output-enable = (T4 + I1)・(T4 + I3) — NOT version is T4・(I1 + I3)
+Clock = (T7 + I1)・(T5 + I2)
+
+Explanation, output enable needs to be 0 for the register to leave the high impedance state. Output-enable at pin 9 and 10 are notted, so the actual input is ANDing T4 with (I0 + I2) for register A && T4 with (I1 + I3) for register B, the decoder inputs can control whether register A (I0 & I2 gives logic 1) can’t output or register B (I1 & I3 gives logic 1) can’t output depending on the inputs from the memory.
+
+Clock is triggered on the negative edge (falling to 0 negated becomes positive edge), thus the goal is to obtain a 0 from a 1. How the instructions are outputted by the tiny weren’t recorded, therefore there is currently no verification for which I signals are triggered for which opcode.

@@ -14,7 +14,7 @@ A 4-Bit Processor built in my system hardware university laboratory
 - [7404](#7404-not-----gate)<br>
 - [7408](#7408-and----gate)<br>
 - [7432](#7432-or----gate)<br>
-#### Operation of the computer
+#### [Operation of the computer](#operation-of-the-computer-1)
 #### Computer specific workings and wiring
 - Timing signal generator
 - Data bus
